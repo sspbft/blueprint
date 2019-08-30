@@ -14,13 +14,13 @@ from communication.zeromq.sender import Sender
 from communication.zeromq.receiver import Receiver
 from communication.udp.sender import Sender as FDSender
 from communication.udp.receiver import Receiver as FDReceiver
-from communication.constants import APP_NAME
 import conf.config as config
 from api.server import start_server
 from modules.helloworld.module import HelloWorldModule
 from resolve.enums import Module, SystemStatus
 from resolve.resolver import Resolver
 from metrics.latency_monitor import monitor_node_latencies
+import modules.constants as cs
 
 # globals
 id = int(os.getenv("ID", 0))
@@ -113,7 +113,7 @@ def setup_logging():
     node_color = colors[id % len(colors)]
     end_color = colors[len(colors) - 1]
 
-    FORMAT = f"{node_color}{APP_NAME}.%(name)s : Node {id}" + " ==> " + \
+    FORMAT = f"{node_color}{cs.APP_NAME}.%(name)s : Node {id}" + " ==> " + \
              "[%(levelname)s] : %(message)s" + f"{end_color}"
     level = logging.DEBUG if os.getenv("DEBUG") is not None else logging.INFO
     logging.basicConfig(format=FORMAT, level=level)

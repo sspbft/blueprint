@@ -1,4 +1,4 @@
-# ssbft-template
+# sspbft-template
 This repository contains a foundation for building a distributed system based on the SSPBFT structure within minutes. It The underlying network model of the system is that of a fully connected graph and lots of functionality comes modelled with this repo such as communication, testing framework, a web API for exposing various endpoints, metric infrastructure and various other things. This repository is intended to be used together with [Thor](https://github.com/sspbft/thor), which is used to boot up the system with all intended configuration.
 
 ## Set up
